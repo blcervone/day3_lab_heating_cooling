@@ -19,10 +19,10 @@ def convert_temp(temp_celsius, target_unit):
         print(f"{temp} degrees Fahrenheit")
 
 # Initialize flag variable for while loop signal
-keep_going = 'y'
+keep_going = True
 
 # Start while loop to ask user for function parameter input and output defined functions with input parameters
-while keep_going == 'y':
+while keep_going == True:
     # Ask for values from user
     actual_temp = int(input("What is the current temperature? (in degrees Celsius) "))
     print()
@@ -40,5 +40,9 @@ while keep_going == 'y':
     print()
 
     # Ask if user would like to continue
-    keep_going = input("Continue? (y/n) ")
+    cont = input("Continue? (y/n) ")
+    if cont.lower() == 'y':
+        keep_going = True
+    else:
+        keep_going = False
     print()
